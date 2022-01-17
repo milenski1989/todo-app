@@ -10,10 +10,11 @@ import Navigation from "./components/Navigation"
 function App() {
 	let navigate = useNavigate()
 	let location = useLocation()
-	useEffect(() => {
-		navigate("login", { replace: true })
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	// useEffect(() => {
+	// 	// if not logged in
+	// 	navigate("login", { replace: true })
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [])
 
 	console.log(location)
 

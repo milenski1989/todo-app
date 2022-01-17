@@ -25,9 +25,15 @@ function Login() {
 		setUsername(event.target.value)
 	}
 	function register(){
+		console.log(email,
+			name,
+			password,
+			username)
 		navigate("/", { replace: true })
 	}
 	function login(){
+		console.log(email,
+			password)
 		navigate("/", { replace: true })
 	}
 
