@@ -1,0 +1,19 @@
+.Navigation{
+    background-color: aquamarine;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Navigation a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+}
+
+.Navigation a:hover{
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,29 @@
+.LoginContainer{
+    background-color:lightgreen;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.page-switcher{
+    display: flex;
+}
+.page-switcher div{
+    padding: 8px;
+}
+
+.LoginForm{
+    background-color: white;
+    padding: 16px;
+    border-radius: 6px;
+}
+
+.btn{
+    background-color: rgb(16, 99, 16);
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 8px 4px;
+}
