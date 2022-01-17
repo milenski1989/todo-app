@@ -25,7 +25,9 @@
     ],
     "rules": {
       "indent": ["warn", "tab"],
-      "semi": ["warn", "never"]
+      "semi": ["warn", "never"],
+      "quotes": ["warn", "single"],
+      "no-multi-spaces": ["error"]
     }
   },
   "browserslist": {
