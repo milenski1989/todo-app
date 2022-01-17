@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Task from "./Task"
 
-export default function Tasks() {
+ function Tasks() {
 	
   const [tasks, setTasks] = useState([])
 
@@ -32,7 +32,9 @@ function handleRemoveItem(index){
     <div className="Tasks">
       {tasks.map((task, index) => <Task task={task} index={index} handleRemoveItem={handleRemoveItem}/>)}
       <input type="text" onChange={takeInputValue}></input>
-	  <button type="submit" onClick={handleAddItem}>submit</button>
+	  <button type="submit" onClick={handleAddItem}>add</button>
     </div>
   )
 }
+
+export default Tasks
