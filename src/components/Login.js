@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router"
-import visiblePage from "../enums/visiblePage"
-import "./Login.css"
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
+import visiblePage from '../enums/visiblePage'
+import fakeServer from '../FakeServer'
+import './Login.css'
 
 function Login() {
 	const [page, setPage] = useState(visiblePage.login)
@@ -25,16 +26,19 @@ function Login() {
 		setUsername(event.target.value)
 	}
 	function register(){
-		console.log(email,
-			name,
-			password,
-			username)
-		navigate("/", { replace: true })
+		fakeServer.register(email,name,password,username)
+		navigate('/', { replace: true })
+		localStorage.setItem('isLoggedIn', JSON.stringify(true))
 	}
 	function login(){
-		console.log(email,
-			password)
-		navigate("/", { replace: true })
+		const response = fakeServer.login(email,password)
+		if(response === 200){
+			navigate('/', { replace: true })
+			localStorage.setItem('isLoggedIn', JSON.stringify(true))
+			// localStorage.removeItem('isLoggedIn')
+		} else {
+			alert('Wrong email or password')
+		}
 	}
 
 
@@ -70,7 +74,7 @@ function Login() {
 				<div>Password</div>
 				<input type="password" value={password} onChange={onChangePassword}/>
 			</div>
-			<div onClick={register} class="btn">Register</div>
+			<div onClick={register} className="btn">Register</div>
 		</div>}
 	</div>
 }
