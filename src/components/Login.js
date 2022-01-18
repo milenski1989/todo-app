@@ -12,27 +12,27 @@ function Login() {
 	const [password, setPassword] = useState('')
 	const [username, setUsername] = useState('')
 	let navigate = useNavigate()
-	
-	function onChangeEmail(event){
+
+	function onChangeEmail(event) {
 		setEmail(event.target.value)
 	}
-	function onChangeName(event){
+	function onChangeName(event) {
 		setName(event.target.value)
 	}
-	function onChangePassword(event){
+	function onChangePassword(event) {
 		setPassword(event.target.value)
 	}
-	function onChangeUsername(event){
+	function onChangeUsername(event) {
 		setUsername(event.target.value)
 	}
-	function register(){
-		fakeServer.register(email,name,password,username)
+	function register() {
+		fakeServer.register(email, name, password, username)
 		navigate('/', { replace: true })
 		localStorage.setItem('isLoggedIn', JSON.stringify(true))
 	}
-	function login(){
-		const response = fakeServer.login(email,password)
-		if(response === 200){
+	function login() {
+		const response = fakeServer.login(email, password)
+		if (response === 200) {
 			navigate('/', { replace: true })
 			localStorage.setItem('isLoggedIn', JSON.stringify(true))
 			// localStorage.removeItem('isLoggedIn')
@@ -41,42 +41,55 @@ function Login() {
 		}
 	}
 
+	return <div>
 
-	return <div className="LoginContainer">
+		{/*switch between Login and Register pages*/}
 		<div className="page-switcher">
-			<div onClick={() => setPage(visiblePage.login)}>Login</div>
-			<div onClick={() => setPage(visiblePage.register)}>Register</div>
+			<div className="page-switcher-item"> <button type="submit" onClick={() => setPage(visiblePage.login)}>Login</button></div>
+			<div className="page-switcher-item"> <button type="submit" onClick={() => setPage(visiblePage.register)}>Register</button></div>
 		</div>
-		{page === visiblePage.login ? <div className="LoginForm">
-			<div>
-				<div>Email</div>
-				<input placeholder="pesho@gmail.com"type="email" value={email} onChange={onChangeEmail}/>
-			</div>
-			<div>
-				<div>Password</div>
-				<input type="password" value={password} onChange={onChangePassword}/>
-			</div>
-			<div onClick={login} class="btn">Login</div>
-		</div> : <div className="LoginForm">
-			<div>
-				<div>Full name</div>
-				<input type="text" value={name} onChange={onChangeName}/>
-			</div>
-			<div>
-				<div>Username</div>
-				<input type="text" value={username} onChange={onChangeUsername}/>
-			</div>
-			<div>
-				<div>Email</div>
-				<input type="email" value={email} onChange={onChangeEmail}/>
-			</div>
-			<div>
-				<div>Password</div>
-				<input type="password" value={password} onChange={onChangePassword}/>
-			</div>
-			<div onClick={register} className="btn">Register</div>
-		</div>}
+
+		<div className="login-container">
+
+			{/*Login form*/}
+			{
+				page === visiblePage.login ? <div className="login-form form">
+					<div className="login-item">
+						<h1>Login Form</h1>
+						<input placeholder="email@email.com" type="email" value={email} onChange={onChangeEmail} />
+					</div>
+					<div className="login-item">
+						<input placeholder="Password" type="password" value={password} onChange={onChangePassword} />
+					</div>
+					<div className="login-btn btn"> <button onClick={login}>Login</button></div>
+
+					{/*Register Form*/}
+				</div> : <div className="register-form form">
+					<div
+						className="register-item">
+						<h1>Register Form</h1>
+						<input type="text" placeholder="Full Name" value={name} onChange={onChangeName} />
+					</div>
+					<div className="register-item">
+						<input type="text" placeholder="Username" value={username} onChange={onChangeUsername} />
+					</div>
+					<div className="register-item">
+						<input type="email" placeholder="email@email.com" value={email} onChange={onChangeEmail} />
+					</div>
+					<div className="register-item">
+						<input type="password" placeholder="Password" value={password} onChange={onChangePassword} />
+					</div>
+
+					<div className="register-btn btn">
+						<button type="submit" onClick={register} >Register</button>
+					</div>
+				</div>
+			}
+		</div>
+
 	</div>
+
+
 }
 
 export default Login

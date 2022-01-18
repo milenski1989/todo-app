@@ -1,0 +1,64 @@
+body{
+    box-sizing: border-box;
+}
+.main-container, .task-container{
+display: flex;
+align-items: center;
+width: 20rem;
+height: 10rem;
+margin: 2rem auto;
+}
+
+.main-container{
+flex-direction: column;
+justify-content: flex-start;
+}
+
+.task-container{
+justify-content: center;
+background: mediumturquoise;
+text-transform: capitalize;
+text-align: center;
+    
+}
+
+.main-container input{
+     width: 20rem;
+    height: 8rem;
+}
+
+.tasks-item button{
+padding: 10px 35px;
+text-transform: capitalize;
+  border:0;
+   line-height: 1.2;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+     transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+}
+
+
+.new-task button{
+    padding: 10px 20px;
+    margin:1rem;
+    text-transform: capitalize;
+    border:0;
+     line-height: 1.2;
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+     transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+}
+.tasks-item button:hover,.new-task button:hover{
+    background:rgb(16, 65, 65) ;
+}
+.new-task{
+    color: whitesmoke;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
