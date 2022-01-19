@@ -1,4 +1,4 @@
-.Profile{
+.profile-inputs-container{
     display: flex;
     flex-direction: column;
     width: 40vw;
@@ -6,13 +6,32 @@
    margin: 16px auto;
    
 }
+.profile-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-.Profile input, button {
+.profile-buttons-container button{
+margin-right: 0.5rem;
+ transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+}
+.profile-buttons-container button:hover{
+     background: rgb(16, 65, 65);
+}
+
+
+.profile-inputs-container input, button {
+    border:0;
     text-align: center;
     margin-top: 8px;
-    padding: 8px;
+    padding: 10px 30px;
     background-color: lightseagreen;
    color: lightyellow;
+
+   /*   border: 0;
+padding: 10px 30px;
+margin-right: 0.7rem;*/
 }
 
 

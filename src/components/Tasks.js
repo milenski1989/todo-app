@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import fakeServer from '../FakeServer'
+import Task from './Task'
 import "./Tasks.css"
 
 
@@ -73,18 +74,13 @@ function Tasks() {
 			</div>
 
 
-
 			{filterResult.map((task, index) => (
-				<div className="task-container">
+				<Task task={task}
+					index={index}
+					handleRemoveItem={handleRemoveItem}
+					check={check} >
 
-
-					<div className="new-task" key={index}>
-						<input type="checkbox" checked={task.completed} onChange={() => check(index)}></input>
-						<div>
-							{task.title}</div>
-						<button onClick={() => handleRemoveItem(index)}>remove</button>
-					</div>
-				</div>
+				</Task>
 
 
 

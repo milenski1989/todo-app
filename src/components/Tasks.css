@@ -19,13 +19,16 @@ justify-content: center;
 background: mediumturquoise;
 text-transform: capitalize;
 text-align: center;
-    
+
+  
 }
+
 
 .main-container input{
      width: 20rem;
     height: 8rem;
 }
+
 
 .tasks-item button{
 padding: 10px 35px;

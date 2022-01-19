@@ -10,6 +10,7 @@ class FakeServer {
 		return 400
 	}
 
+
 	createTask(task) {
 		const tasks = this.loadTasks()
 		tasks.push(task)
@@ -48,7 +49,7 @@ class FakeServer {
 		profileData.password = password
 		profileData.email = email
 		// save in localstorage
-		localStorage.setItem('tasks', JSON.stringify(profileData))
+		localStorage.setItem('account', JSON.stringify(profileData))
 
 	}
 }

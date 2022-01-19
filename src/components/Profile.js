@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import "./Profile.css"
 import fakeServer from "../FakeServer"
+import Login from "./Login"
+
 
 const account = JSON.parse(localStorage.getItem('account'))
 
@@ -40,13 +42,24 @@ function Profile() {
 			email)
 	}
 
-	return <div className="Profile">
-		<input type="text" placeholder="name" value={name} onChange={changeName}></input>
-		<input type="text" placeholder="username" value={username} onChange={changeUsername}></input>
-		<input type="text" placeholder="password" value={password} onChange={changePassword}></input>
-		<input type="text" placeholder="email" value={email} onChange={changeEmail}></input>
-		<button type="submit" onClick={changeAccountDetails}>Save</button>
+	function handleLogout() {
+		window.location.href = 'login'
+	}
+
+	return <div className="profile-container">
+		<div className="profile-inputs-container">
+			<input type="text" placeholder="name" value={name} onChange={changeName}></input>
+			<input type="text" placeholder="username" value={username} onChange={changeUsername}></input>
+			<input type="text" placeholder="password" value={password} onChange={changePassword}></input>
+			<input type="text" placeholder="email" value={email} onChange={changeEmail}></input>
+		</div>
+
+		<div className="profile-buttons-container">
+			<button type="submit" onClick={changeAccountDetails}>Save</button>
+			<button type="button" className="logout" onClick={handleLogout} >Logout</button>
+		</div>
 	</div>
+
 }
 
 export default Profile

@@ -6,13 +6,14 @@ import Profile from './components/Profile'
 import Login from './components/Login'
 import { useEffect } from 'react'
 import Navigation from './components/Navigation'
+import Task from './components/Task'
 
 function App() {
 	let navigate = useNavigate()
 	let location = useLocation()
 	useEffect(() => {
 		// if not logged in
-		if(!localStorage.getItem('isLoggedIn')){
+		if (!localStorage.getItem('isLoggedIn')) {
 			navigate('login', { replace: true })
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
