@@ -14,9 +14,10 @@ class FakeServer {
 	createTask(task) {
 		const tasks = this.loadTasks()
 		tasks.push(task)
-
 		localStorage.setItem('tasks', JSON.stringify(tasks))
+
 	}
+
 
 	loadTasks() {
 		let tasks
@@ -26,8 +27,9 @@ class FakeServer {
 		else {
 			tasks = []
 		}
-
 		return tasks
+
+
 	}
 
 	deleteTask(index) {
@@ -40,6 +42,7 @@ class FakeServer {
 		const tasks = this.loadTasks()
 		tasks[index] = task
 		localStorage.setItem('tasks', JSON.stringify(tasks))
+
 	}
 
 	editProfile(name, username, password, email) {
@@ -50,8 +53,8 @@ class FakeServer {
 		profileData.email = email
 		// save in localstorage
 		localStorage.setItem('account', JSON.stringify(profileData))
-
 	}
+
 }
 
 const fakeServer = new FakeServer()

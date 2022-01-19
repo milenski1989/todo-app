@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import fakeServer from '../FakeServer'
 import Task from './Task'
 import "./Tasks.css"
+import Modal from 'react-modal'
+Modal.setAppElement('#root')
 
 
 function Tasks() {
@@ -10,6 +12,7 @@ function Tasks() {
 	const [inputValue, setInputValue] = useState('')
 
 	const [searchValue, setSearchValue] = useState('')
+
 
 	useEffect(() => {
 		const tasks = fakeServer.loadTasks()
@@ -21,10 +24,12 @@ function Tasks() {
 		const task = {
 			title: inputValue,
 			completed: false,
+			modalDescription: ""
 		}
 		setTasks([...tasks, task])
 
 		fakeServer.createTask(task)
+		setInputValue('')
 	}
 
 	function takeInputValue(event) {
@@ -55,6 +60,8 @@ function Tasks() {
 
 	}
 
+
+
 	const filterResult = searchValue.length > 0
 		? tasks.filter((task) => task.title.includes(searchValue) ? true : false)
 		: tasks
@@ -67,7 +74,7 @@ function Tasks() {
 			<div className="main-container">
 				<input type="text" placeholder="Search for tasks..." onChange={filterTasks}></input>
 
-				<input type="text" placeholder="Add a new task..." onChange={takeInputValue}></input>
+				<input type="text" placeholder="Add a new task..." value={inputValue} onChange={takeInputValue}></input>
 				<div className="tasks-item"><button type="submit" onClick={handleAddItem}>
 					add
 				</button></div>
@@ -78,7 +85,9 @@ function Tasks() {
 				<Task task={task}
 					index={index}
 					handleRemoveItem={handleRemoveItem}
-					check={check} >
+					check={check}
+
+				>
 
 				</Task>
 
