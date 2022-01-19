@@ -5,15 +5,15 @@ import Tasks from "./Tasks"
 
 function Task({ task, index, handleRemoveItem, check }) {
 
-
     return (<div className="task-container">
         <div className="new-task" key={index}>
             <input type="checkbox" checked={task.completed} onChange={() => check(index)}></input>
-            <div>
+            <div className={task.completed ? "task-completed" : "task-notcompleted"}>
                 {task.title}</div>
             <button onClick={() => handleRemoveItem(index)}>remove</button>
         </div>
-    </div>)
+    </div>
+    )
 
 
 }

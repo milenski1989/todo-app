@@ -40,6 +40,13 @@ text-transform: capitalize;
      transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
 }
 
+.task-completed{
+    text-decoration:line-through;
+    text-decoration-color:black;
+}
+.task-notcompleted{
+    text-decoration: none;
+}
 
 .new-task button{
     padding: 10px 20px;
