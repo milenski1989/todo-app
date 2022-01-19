@@ -1,7 +1,7 @@
 body{
     box-sizing: border-box;
 }
-.main-container, .task-container{
+.main-container, .single-task-container{
 display: flex;
 align-items: center;
 width: 20rem;
@@ -14,13 +14,17 @@ flex-direction: column;
 justify-content: flex-start;
 }
 
-.task-container{
+.single-task-container{
 justify-content: center;
 background: mediumturquoise;
 text-transform: capitalize;
 text-align: center;
-
   
+}
+
+.multiple-tasks-container{
+    float:left;
+    margin-right: 8px;
 }
 
 
