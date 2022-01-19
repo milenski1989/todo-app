@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./Profile.css"
 import fakeServer from "../FakeServer"
 import Login from "./Login"
+import { useNavigate } from 'react-router'
 
 
 const account = JSON.parse(localStorage.getItem('account'))
@@ -12,6 +13,7 @@ function Profile() {
 	const [username, setUsername] = useState(account.username)
 	const [password, setPassword] = useState(account.password)
 	const [email, setEmail] = useState(account.email)
+	let navigate = useNavigate()
 
 
 	function changeName(event) {
@@ -43,7 +45,8 @@ function Profile() {
 	}
 
 	function handleLogout() {
-		window.location.href = 'login'
+		localStorage.removeItem('isLoggedIn')
+		navigate('/login', { replace: true })
 	}
 
 	return <div className="profile-container">

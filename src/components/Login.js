@@ -42,7 +42,6 @@ function Login() {
 	}
 
 
-
 	return <div>
 
 		{/*switch between Login and Register pages*/}
