@@ -1,0 +1,34 @@
+.popover-btn{
+    position:absolute;
+    right: 13rem;
+    padding: 10px;
+}
+
+.avatar{
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
+    border-radius: 17px;
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.popover .cell:hover{
+    background-color: lightblue;
+}
+
+.popover .cell.selected{
+    background-color: greenyellow;
+}
+
+.popover{
+    padding: 4px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid gray;
+}

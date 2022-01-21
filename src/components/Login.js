@@ -4,6 +4,7 @@ import visiblePage from '../enums/visiblePage'
 import fakeServer from '../FakeServer'
 import './Login.css'
 
+
 function Login() {
 	const [page, setPage] = useState(visiblePage.login)
 
@@ -11,6 +12,7 @@ function Login() {
 	const [name, setName] = useState('')
 	const [password, setPassword] = useState('')
 	const [username, setUsername] = useState('')
+
 	let navigate = useNavigate()
 
 	function onChangeEmail(event) {

@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react"
 import fakeServer from "../FakeServer"
 import Tasks from "./Tasks"
 import Modal from 'react-modal'
+import Dropdown from "./Dropdown"
 Modal.setAppElement('#root')
 
 
 function Task({ task, index, handleRemoveItem, check }) {
 
-
-
     const [modalIsOpen, setIsOpen] = useState(false)
     const [modalDescription, setModalDescription] = useState(task.modalDescription)
-
-
 
     function openModal() {
         setIsOpen(true)
@@ -20,7 +17,6 @@ function Task({ task, index, handleRemoveItem, check }) {
 
     function closeModal() {
         setIsOpen(false)
-
     }
 
     function handleModalDescription(event) {
@@ -28,7 +24,6 @@ function Task({ task, index, handleRemoveItem, check }) {
         newTask.modalDescription = event.target.value
         setModalDescription(event.target.value)
         fakeServer.updateTask(index, newTask)
-
     }
 
     return (
@@ -49,6 +44,8 @@ function Task({ task, index, handleRemoveItem, check }) {
                         onRequestClose={closeModal}
                     >
                         <div className="modal-task-title">{task.title}</div>
+                        <Dropdown></Dropdown>
+
                         <button onClick={closeModal}>close</button>
                         <div> <input type="checkbox" checked={task.completed} onChange={() => check(index)}></input></div>
                         <textarea value={modalDescription} onChange={(event) => handleModalDescription(event)}></textarea>

@@ -24,7 +24,7 @@ function Tasks() {
 		const task = {
 			title: inputValue,
 			completed: false,
-			modalDescription: ""
+			modalDescription: ''
 		}
 		setTasks([...tasks, task])
 
@@ -55,9 +55,7 @@ function Tasks() {
 	}
 
 	function filterTasks(event) {
-
 		setSearchValue(event.target.value)
-
 	}
 
 
@@ -68,9 +66,7 @@ function Tasks() {
 
 
 	return (
-
 		<>
-
 			<div className="main-container">
 				<input type="text" placeholder="Search for tasks..." onChange={filterTasks}></input>
 
@@ -80,24 +76,15 @@ function Tasks() {
 				</button></div>
 			</div>
 
-
 			{filterResult.map((task, index) => (
-				<Task task={task}
+				<Task key={index}
+					task={task}
 					index={index}
 					handleRemoveItem={handleRemoveItem}
 					check={check}
-
-				>
-
-				</Task>
-
-
-
+				/>
 			))}
-
-
 		</>
-
 	)
 }
 
