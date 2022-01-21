@@ -6,6 +6,8 @@ import Dropdown from "./Dropdown"
 Modal.setAppElement('#root')
 
 
+
+
 function Task({ task, index, handleRemoveItem, check }) {
 
     const [modalIsOpen, setIsOpen] = useState(false)

@@ -6,7 +6,7 @@ import Profile from './components/Profile'
 import Login from './components/Login'
 import { useEffect } from 'react'
 import Navigation from './components/Navigation'
-import Task from './components/Task'
+import Pictures from './components/Pictures'
 
 function App() {
 	let navigate = useNavigate()
@@ -19,8 +19,6 @@ function App() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	console.log(location)
-
 	return (
 		<>
 			{location.pathname !== '/login' && <Navigation />}
@@ -28,6 +26,7 @@ function App() {
 				<Route path="/" element={<Tasks />} />
 				<Route path="profile" element={<Profile />} />
 				<Route path="login" element={<Login />} />
+				<Route path="pictures" element={<Pictures />} />
 			</Routes>
 		</>
 	)

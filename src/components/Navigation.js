@@ -8,6 +8,7 @@ function Navigation() {
 		<nav className="Navigation">
 			<Link to={"/profile"}>Profile</Link>
 			<Link to={"/"}>Tasks</Link>
+			<Link to={"/pictures"}>Pictures</Link>
 		</nav>
 	)
 }

@@ -6,6 +6,7 @@ import Modal from 'react-modal'
 Modal.setAppElement('#root')
 
 
+
 function Tasks() {
 	const [tasks, setTasks] = useState([])
 
@@ -63,6 +64,9 @@ function Tasks() {
 	const filterResult = searchValue.length > 0
 		? tasks.filter((task) => task.title.includes(searchValue) ? true : false)
 		: tasks
+
+
+
 
 
 	return (
